@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<section>
+    <div class="blog">
+        <div class="container">
+            <div class="owl-carousel owl-theme blog-post">
+                {% for i in pub %}
+                <div class="blog-content" data-aos="fade-right" data-aos-delay="200">
+                    <img src="{{i.image.url}}" alt="post-1">
+                    <div class="blog-title">
+                        <h3>{{i.title}}</h3>
+                        <a href="{% url 'blog_detail' i.slug %}">
+                            <button class="btn btn-blog">Lire</button>
+                        </a>
+                        <span>{{i.publish_date}}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="owl-navigation">
+                <span class="owl-nav-prev"><i class="fas fa-long-arrow-alt-left"></i></span>
+                <span class="owl-nav-next"><i class="fas fa-long-arrow-alt-right"></i></span>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

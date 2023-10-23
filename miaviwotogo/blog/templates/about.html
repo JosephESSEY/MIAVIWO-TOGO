@@ -1,0 +1,322 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MIAVIWO-TOGO</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href=" {% static 'assets/img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'assets/lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'assets/css/style.csS' %}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light" style="font-size: 12px;"><i class="fa fa-map-marker-alt me-2"></i>Hiheatro-Elavagnon,Atakpamé, TOGO</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i> +228 93 40 18 66 / +33 616 838 709</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>miaviwotogo@gmail.com</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/miaviwotogo"><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAADspVnABmApcvT5rtwt9wxiUpI_i4oTUmzA&keywords=miaviwo%20togo&origin=RICH_QUERY_SUGGESTION&position=0&searchId=876cec2a-8b0f-4b15-aec3-048ef2ee685b&sid=l*I&spellCorrectionEnabled=false"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/miaviwotogo/"><i class="fab fa-instagram fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="m-0" style="color: #FF3E18;"> <img src="{% static 'assets/img/LOGO avec Slogan.png' %}" alt="Logo" class="me-3">MIAVIWO-TOGO</h1>
+                
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="{% url 'accueil' %}" class="nav-item nav-link">Accueil</a>
+                    <a href="{% url 'all_pub' %}" class="nav-item nav-link">Actualité</a>
+                    <a href="{% url 'articles' %}" class="nav-item nav-link">Généralités</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Stages & Missions</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="{% url 'programme' %}" class="dropdown-item">Conditions de Participations </a>
+                            <a href="{% url 'about' %}" class="dropdown-item">Conditions Locales de vie</a>
+                                <a href="{% url 'testimonial' %}" class="dropdown-item">Frais de Participations</a>
+                                <a href="{% url '404' %}" class="dropdown-item">Dossiers à fournir</a>
+                        </div>
+                    </div>
+                    <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+            <div class="container py-5">
+                <div class="row justify-content-center py-5">
+                    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                        <h1 class="display-3 text-white animated slideInDown">CONDITIONS LOCALES DE VIE</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                                <li class="breadcrumb-item"><a href="#">Stages & Missions</a></li>
+                                <li class="breadcrumb-item text-white active" aria-current="page">Condition locale de vie</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+
+    <!--Conditions locales de vie Start-->
+
+    <div class="container-xxl">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Conditions</h6>
+                <h1 class="mb-5">Conditions Locales de Vies</h1>
+            </div>
+            
+            <div>
+                
+                <p style="width: 1000px; margin: auto;text-align: justify;line-height: 35px;">
+                    <h1 class="text-primary">La vie durant le stage ou mission de volontariat</h1> <br><br>
+
+                    <h3>Les conditions matérielles seront les suivantes pendant le projet : <br></h3>
+                    
+                    Hébergement en dur dans les villages, dans les grandes villes (Une chambre électrifiée, ventillée, WC et douche)<br>
+                    
+                    <h5>Douche traditionnelle-Latrines traditionnelles</h5>
+                    
+                    NB : La famille d'accueil se chargera de faire la cuisine au volontaire durant tout le séjour, mais celui ou celle-ci peut également participer à toute leur vie quotidienne, donc à la cuisine par exemple sil ou elle le souhaite.<br>
+                    
+                    <h5>
+                        Hébergement dans les communautés d'accueil </h5>
+                    
+                    
+                    <h5>Chambres et toilettes</h5>
+                    
+                    Les chambres et les nattes peuvent être partagées entre les bénévoles en fonction du nombre. Souvent, les bénévoles sont logés dans les maisons en bamco ou dans une famille d'accueil.<br>
+                    
+                    En ce qui concerne les toilettes, ce sont souvent les fosses sèches à trou. Pour la douche, c'est très typique d'où le bénévole a besoin d'emmener le seau d'eau à la douche clôturée pour cacher la nudité, mais souvent non couverte, donc à ciel ouvert.<br>
+                    
+                    
+                    <h5>Protection contre les moustiques :</h5>
+                    
+                    Il n'y a pas énormément de moustiques dans les villages notamment. Cependant, il faut quand même prévoir une moustiquaire à une ou deux places pour mettre autour de son couchage et des répulsifs anti moustique. C'est très important !<br>
+                    
+                    
+                    <h5>Accès à l'eau :</h5>
+                    
+                    Comme dans la quasi totalité des foyers Africain, il n'y a pas l'eau courante. Cette eau n'est pas potable, elle sert pour la douche, les toilettes, la cuisine, la vaisselle et la lessive.<br>
+                    
+                    Dans les localités d'accueil souvent l'eau est trouvée dans les puits, ou dans les rivières desservant les villages. Chaque bénévole est habileté à s'y rendre pour ses besoins en eau (douche, lessive)<br>
+                    
+                    
+                    <h5>Eau potable</h5>
+                    
+                    A défaut de ramener des pastilles pour purifier l'eau les bénévoles devront élaborés un budget personnel pour s'acheter de l'eau minérale en bouteille ou en sachet sur place dans les grandes villes ou dans la grande ville la plus proche du village.<br>
+                    
+                    L'eau potable se trouve soit dans des bouteilles d'eau minérale ou dans des sachets de 50 ml, on peut en acheter quasiment n'importe où en ville. Elle est traitée et peut se boire sans aucune inquiétude. Au Togo par exemple : l'eau minérale en bouteille coûte généralement 350 FCFA soit 1/2 Euros, un sachet de 30 petites poches d'eau coûte aussi le même prix. Dans le cas où vous l'acheter dans un super marché, le prix est nettement différent et peut grimper jusqu'à 1 euro et demi.<br>
+                    
+                    
+                    <h5>Lessive</h5>
+                    
+                    Elle se fait à la main. Tout un sport ! Cela prend du temps mais c'est tout aussi efficace qu'une machine.<br>
+                    
+                    
+                    <h5>Nourriture-Préparation</h5>
+                    
+                    Il n'y a pas de gaz, de cuisinière ou d'aspirateur. La nourriture est cuite avec du charbon de bois sur un système de pot en terre cuite ou sur le fourneau à bois de chauffe ou encore avec foyer utilisant du charbon de bois.<br>
+                    
+                    <h5>Conservation des aliments</h5>
+                    
+                    Il n'y a pas de réfrigérateur. Certains aliments proviennent (poulet, boeuf) se mange directement. Il y a également beaucoup de féculents (spaghetti, riz, semoule etc…) qui n'ont pas besoin de conditions spécifiques de conservation.<br>
+                    
+                    <h5>Composition des repas</h5>
+                    
+                    Les repas sont locaux mais adaptés aux estomacs européens (moins pimentés et moins épicé). Généralement, ils se composent que d'un seul plat principal en quantité importante avec un dessert.<br>
+                    
+                    Plat principal : Des féculents (pâte à base de farine de maïs, de manioc ou de tubercules d'igname, riz, spaghetti, semoule…) accompagnés d'une sauce à base de concentré de tomates, d'oignons, de viande ou de poisson, sardine, thon, corne beef….<br>
+                    
+                    La tradition fait que les plats à base de pâte et de Fufu se mangent avec la main. On prend un bout de pâte qu'on trempe ensuite dans la sauce. Ce n'est pas un protocole, on peut si l'on désire manger avec des couverts.<br>
+                    
+                    Desserts : les desserts sont des fruits locaux : ananas, oranges, papayes, pamplemousses, mangues, noix de coco, bananes…<br>
+                    
+                    Petits déjeuners: Ils sont de type Français : confitures de fruits locales (Fraise, abricot) patte à tartinée, pains, café, beure, thé, ricorée. Il n'y a pas de lait frais, mais du lait concentré en conserve.<br>
+                    
+                    <h5>Electricité</h5>
+                    
+                    Il n'y a pas d'électricité dans les villages ou localités où se déroulent les chantiers. L'éclairage est assuré à travers l'usage des lampes à pétrole. Donc, il est indispensable de se munir des lampes torches qui ont une grande importance dans la vie du chantier surtout pour les promenades nocturnes.<br>
+                    
+                    <h5>Communication et accès à Internet</h5>
+                    
+                    Téléphone et poste : Pensez en France à débloquer votre portable pour pouvoir utiliser des cartes du pays de destination. Ce service est gratuit selon les opérateurs si vous avez votre appareil depuis 6 mois. Dans le cas contraire, vous pouvez réaliser cette opération chez des vendeurs particuliers ou sur Internet (coût approximatif : 10 €). Les opérateurs nationaux proposent des tarifs plus avantageux pour les appels vers l'étranger. Il n'y a pas de système d'abonnement, ce sont des cartes prépayées. Pour la poste, nous vous déconseillons d'utiliser leurs services (lenteur, vol…).<br>
+                    
+                    Si vraiment vous êtes obligés d'envoyer ou de recevoir du courrier ou un colis choisissez la société UPS.<br>
+                    
+                    Internet : L'association a un accès direct à Internet au bureau et les volontaires pourront gratuitement envoyer des mails à leurs proches au lendemain de leur arrivée.<br>
+                    
+                    <h5>Cybers café</h5>
+                    
+                    Il a plusieurs dans les grandes villes et dans les grandes villes du pays. Pour s'y rendre, il faut utiliser le transport le plus rependu surtout durant le camp chantier, puisse qu'il à lieu dans les villages, la mototaxi communément appelé Zémidjan. Le prix d'une course vari selon la distance à parcourir, il n'y à pas un chronomètre ni un kilométrage, il se négocie.<br>
+                    
+                    Les connexions sont très lentes, la patience est de rigueur. On peut aussi faire face aux problèmes de connexion et coupures d'électricité. Le prix des connexions varient selon le débit de 300 à 500 Francs CFA l'heure (0,45 € à 0,75 €). L'utilisation d'Internet d'ordre personnel sur le chantier (divertissement, communication avec la famille…) et les déplacements qu'elle engendre sont aux frais des bénévoles.<br>
+                    
+                    <h5>Déplacements</h5>
+                    
+                    Les déplacements dans les grandes villes et dans les alentours se font souvent en taxi brousse ou en Taxi moto. Du fait que les locaux de l'association ne se situent pas directement en centre ville, ce moyen de déplacement est souvent utilisé.<br>
+                    
+                    
+                    <h5>Financement du projet</h5>
+                    
+                    Le projet dans sa totalité est autofinancé. Il est à noter que le travail n'est pas rémunéré, c'est un travail bénévole. Aussi en fonction de la capacité du volontaire, il pourra apporter quelques aides matérielles ou (et) financières au projet et à l'association.<br><br>
+                    
+                    <h5>
+                        NB :
+                    </h5> 
+                    
+                    Les frais de participation ci-dessous ne couvrent pas : Le prix du billet d'avion, l'assurance rapatriement, maladie, les loisirs (visites, les excursions, les frais d'organisation de la journée européenne) et les consommations personnelles des bénévoles (achats de souvenirs, cigarettes, eau minérales en bouteille / poches d'eau etc…).<br>
+                    
+                    Hormis l'accueil et le transport du jour d'arrivée et celui des démarches consulaire et bancaire, l'accès à Internet pour envoyer des nouvelles à ses proches au lendemain de l'arrivée.<br>
+                    
+                    C'est à dire le bénévole assure entièrement la charge de ces déplacements personnels et restauration pour les quelques jours qu'il/elle passera dans les grandes villes avant ou après le stage.<br>
+                    
+                    En outre le bénévole stagiaire devra prévoir des droits de stage si la structure accueillante, si le stage ne se déroule pas au sein de » MIAVIWO-TOGO » c'est généralement le cas des stages en architecture, infirmerie, artisanat, décoration, art plastique, environnement etc bref auprès des professionnels.<br>
+                    
+                    Le bénévole n'est pris en charge par » MIAVIWO-TOGO » qu'à compter de la date du début effectif du stage jusqu'à la fin du stage (1mois selon la durée du stage).<br>
+                    
+                    Le voyage et l'assurance (maladie, rapatriement) sont à la charge du volontaire ainsi que les frais de déplacement au cour de la réalisation du projet.<br>
+                    
+                    * Un rapport de fin de projet doit être déposé en français ou en anglais, avant le départ du volontaire avec une restitution au bureau exécutif de » MIAVIWO-TOGO « .<br>
+                    
+                    * Une attestation de fin de stage/mission est délivrée à cet effet après dépôt de rapport du projet réalisé
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--Conditions locales de vie End-->
+
+    
+    <!-- Footer Start -->
+<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-3">Company</h4>
+                <a class="btn btn-link" href="{% url 'all_pub' %}">Nos Actualités</a>
+                <a class="btn btn-link" href="{% url 'contact' %}">Contactez-Nous</a>
+                <a class="btn btn-link" href="">Privacy Policy</a>
+                <a class="btn btn-link" href="">Terms & Condition</a>
+                <a class="btn btn-link" href="">FAQs & Help</a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-3">Nous Soutenir</h4>
+                <p class="mb-2" style="font-size: 12px;"><i class="fa fa-map-marker-alt me-3"></i>Hiheatro-Elavagnon,Atakpamé, TOGO</p>
+                <p class="mb-2" style="font-size: 12px;"><i class="fa fa-phone-alt me-3"></i>+228 93 40 18 66 / +33 616 838 709</p>
+                <p class="mb-2"><i class="fa fa-envelope me-3"></i>miaviwotogo@gmail.com</p>
+                <div class="d-flex pt-2">
+                    <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/miaviwotogo/"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/miaviwotogo"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAADspVnABmApcvT5rtwt9wxiUpI_i4oTUmzA&keywords=miaviwo%20togo&origin=RICH_QUERY_SUGGESTION&position=0&searchId=876cec2a-8b0f-4b15-aec3-048ef2ee685b&sid=l*I&spellCorrectionEnabled=false"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <h4 class="text-white mb-3">Newsletter</h4>
+                <div class="position-relative mx-auto" style="max-width: 400px;">
+                    <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Email">
+                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="copyright">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom" href="#">MIAVIWO-TOGO</a>, All Right Reserved.
+
+                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> And <a href="#" class="border-bottom">Joseph ESSEY</a>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-menu">
+                        <a href="">Home</a>
+                        <a href="">Cookies</a>
+                        <a href="">Help</a>
+                        <a href="">FQAs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+ 
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'assets/lib/wow/wow.min.js' %}"></script>
+<script src="{% static 'assets/lib/easing/easing.min.js' %}"></script>
+<script src="{% static 'assets/lib/waypoints/waypoints.min.js' %}"></script>
+<script src="{% static 'assets/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/lib/tempusdominus/js/moment.min.js' %}"></script>
+<script src="{% static 'assets/lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
+<script src="{% static 'assets/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+
+<!-- Template Javascript -->
+<script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+</html>

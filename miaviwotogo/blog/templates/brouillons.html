@@ -1,0 +1,50 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<style>
+  #customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #00603d;
+    color: white;
+  }
+</style>
+
+<div class="container">
+        <table id="customers">
+          <tr>
+            <th>Date</th>
+            <th>Titre</th>
+            <th>Action</th>
+          </tr>
+          {% for i in blog_objs %}
+          <tr>
+            <td>{{i.publish_date}}</td>
+            <td>{{i.title}}</td>
+            <td>
+              <a href="{% url 'blog_update' i.slug %}"><i class="fas fa-edit"></i></a>
+              <a href="{% url 'blog_delete' i.id %}"><i class="fas fa-trash-alt"></i></a>
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+  </div>
+
+  {% endblock %}

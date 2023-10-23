@@ -1,0 +1,55 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+                
+        <div class="container">
+            
+            
+            <div class="site-content">
+                
+                    <aside class="sidebar">
+                        
+                        <a href="{% url 'see_blog' %}">
+                            <button class="btn btn-blog">Mes publications</button>
+                        </a>
+        
+                        <a href="{% url 'draft' %}">
+                            <button class="btn btn-blog">Brouillons</button>
+                        </a>
+                        <hr>
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="newsletter">
+
+                                <div class="form-element">
+                                    <input type="text" class="input-element" placeholder="Titre" name="title">
+                                </div>
+
+        
+
+                                <div class="form-element">
+                                    {{form.media}}
+                                    {{form.as_p}}
+                                </div>
+                             
+                                <!-- <div class="form-element">
+                                    <label for="">Photo de couverture:</label>
+                                    <input type="file" name="image">
+                                </div> -->
+
+                                <div class="form-element">
+                                    <button type="submit" class="btn form-btn">Publier</button>
+                                </div>
+
+                            </div>
+
+                            
+                        </form>
+                    </aside>
+
+            </div>
+        </div>
+
+
+{% endblock %}

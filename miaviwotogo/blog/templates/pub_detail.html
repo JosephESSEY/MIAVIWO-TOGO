@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<section class="container">
+    <div class="site-content">
+        <div class="posts">
+            <hr>
+            <div class="post-content" data-aos="zoom-in" data-aos-delay="200">
+                <div class="post-image">
+                    <div>
+                        <img src="{{blog_obj.image.url}}" class="img" alt="blog1">
+                    </div>
+                    <div class="post-info flex-row">
+                        <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;{{blog_obj.user}}</span>
+                        <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;{{blog_obj.publish_date}}</span>
+                        <span>12 Commets</span>
+                    </div>
+                </div>
+                <div class="post-title">
+                    <a href="#">{{blog_obj.title}}</a>
+                    <p>{{blog_obj.contenu|safe}}</p>
+                    
+                </div>
+            </div>
+            
+        </div>
+  
+    </div>
+</section>
+
+
+{% endblock %}
